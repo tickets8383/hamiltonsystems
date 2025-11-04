@@ -3,186 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamilton Systems - Logical Problem-Solving & Strategic Planning</title>
+    <title>Hamilton Systems - Transform Uncertainty into Action</title>
     <style>
         :root {
-            --primary-color: #0d1117;
-            --secondary-color: #161b22;
-            --accent-color: #58a6ff;
-            --text-color: #c9d1d9;
-            --heading-color: #f0f6fc;
-            --border-color: #30363d;
+            --primary-color: #0a0a0a;
+            --accent-color: #0055ff;
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+            --max-width: 800px;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            max-width: 960px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 2rem;
         }
 
         header {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 1px solid var(--border-color);
         }
 
         header h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            color: var(--heading-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
             margin: 0;
         }
 
         header p {
-            font-size: 1.25rem;
-            color: var(--text-color);
-            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 0.5rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 12px 28px;
-            border-radius: 6px;
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
             text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        nav a:hover, nav a:focus {
+            border-bottom-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .cta {
+            font-size: 1.1rem;
+            color: var(--primary-color);
             font-weight: 600;
-            margin-top: 25px;
-            transition: background-color 0.2s;
-        }
-
-        .cta-button:hover {
-            background-color: #79c0ff;
-        }
-
-        main {
-            padding: 60px 0;
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 4rem;
         }
 
-        section h2 {
-            font-size: 2rem;
+        h2 {
+            font-size: 1.8rem;
             font-weight: 600;
-            color: var(--heading-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
         }
 
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            gap: 2rem;
         }
 
         .problem-card {
-            background-color: var(--secondary-color);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 25px;
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
         }
 
         .problem-card h3 {
-            color: var(--heading-color);
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-top: 0;
-            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
         }
 
         .process-steps {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
         }
 
-        .step {
-            flex-basis: 30%;
-            text-align: center;
+        .process-steps li {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 2.5rem;
         }
 
-        .step-number {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
+        .process-steps li:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: -5px;
             width: 40px;
             height: 40px;
+            background-color: var(--accent-color);
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 1.2rem;
-            margin: 0 auto 15px auto;
         }
 
-        .step h3 {
+        .process-steps h3 {
+            font-size: 1.2rem;
             margin-top: 0;
-            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
         }
-        
+
         footer {
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #e0e0e0;
+            color: #888;
             font-size: 0.9rem;
-            color: var(--text-color);
         }
 
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
             header h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
-            .process-steps {
-                flex-direction: column;
-            }
-            .step {
-                flex-basis: 100%;
+            .hero h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <h1>Hamilton Systems</h1>
-            <p>Logical Problem-Solving & Strategic Planning</p>
-            <a href="https://tickets8383.github.io/hamiltonsystems/services" class="cta-button">View Services</a>
-        </div>
-    </header>
+            <p>Systemic Thinking for Personal & Professional Strategy</p>
+        </header>
 
-    <main>
-        <div class="container">
-            <section id="about">
+        <nav>
+            <a href="/">Home</a>
+            <a href="services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+
+        <main>
+            <section class="hero">
                 <h2>Transform Uncertainty into Action</h2>
-                <p>
-                    Complex problems are often just simple systems viewed from the wrong angle. I specialize in deconstructing chaotic personal and professional situations, stripping away the noise, and revealing the logical structure underneath. The result isn't just advice; it's a clear, actionable framework designed for your specific situation.
-                </p>
-                <p>
-                    Stop spinning your wheels. It's time to build a map.
-                </p>
+                <p>Complex problems are often just simple systems viewed from the wrong angle. I specialize in deconstructing chaotic personal and professional situations, stripping away the noise, and revealing the logical structure underneath. The result isn't just advice; it's a clear, actionable framework designed for your specific situation.</p>
+                <p class="cta">Stop spinning your wheels. It's time to build a map.</p>
             </section>
 
             <section id="problems">
@@ -202,36 +230,30 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="process">
                 <h2>How It Works</h2>
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
+                <ol class="process-steps">
+                    <li>
                         <h3>Define The Problem</h3>
                         <p>You provide a written summary of the situation. We establish the scope and your desired outcome.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
+                    </li>
+                    <li>
                         <h3>Deconstruct & Analyze</h3>
                         <p>I analyze the variables, challenge assumptions, and map the underlying system of your problem.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
+                    </li>
+                    <li>
                         <h3>Receive Your Framework</h3>
                         <p>You get a clear, logical framework—be it a diagnostic document, a strategic map, or a system audit—to guide your actions.</p>
-                    </div>
-                </div>
+                    </li>
+                </ol>
             </section>
-        </div>
-    </main>
+        </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Hamilton Systems. A strategic consulting service.</p>
-            <p>Located in Hamilton, Ontario. Serving clients globally.</p>
-        </div>
-    </footer>
+        <footer>
+            <p>&copy; 2024 Hamilton Systems. All Rights Reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>

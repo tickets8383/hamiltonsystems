@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamilton Systems | Trade-off Architect Services</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --accent: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services {
+            background-color: white;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+        .price span {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        
+        .pricing-body {
+            padding: 30px;
+        }
+        
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .cta {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Hamilton <span>Systems</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Trade-off Architect Services</h1>
+                <p>Eliminate Impossible Choices in Your Business Systems</p>
+                <a href="#services" class="btn">Explore Services</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transform Your "Either/Or" Dilemmas into "Both/And" Solutions</h2>
+                <p>Most leaders don't need someone to *find* their bottlenecks—they know where the pain is. They're trapped on a Pareto frontier of competing priorities where every choice sacrifices something critical. I'm not a consultant. I'm a <strong>Trade-off Architect</strong>—specializing in redesigning systems so you don't have to choose between speed and quality, innovation and stability, or growth and profitability.</p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Trade-off Mapping</h3>
+                        <div class="price">$1,500 <span>/session</span></div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="features">
+                            <li>60-minute intensive session mapping your specific "impossible choice"</li>
+                            <li>1-page diagnostic document identifying where the trade-off is artificially constrained</li>
+                            <li>Redesigned handoff framework showing how to re-engineer the system</li>
+                            <li>3 concrete next steps to begin implementation immediately</li>
+                        </ul>
+                        <p><em>Example outcome: A SaaS client eliminated their "fast proposals vs. personalized quality" trade-off, achieving 3x speed with 18% higher win rates.</em></p>
+                        <a href="https://www.linkedin.com/in/webcontentmanager/" class="btn" style="width: 100%;">Request Session</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Deep Dive Implementation</h3>
+                        <div class="price">$2,500 <span>/session</span></div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="features">
+                            <li>90-minute strategic session with custom system redesign</li>
+                            <li>Custom AI workflow draft tailored to your business context</li>
+                            <li>2-week email support for implementation questions</li>
+                            <li>Needle tracker framework showing what metrics move the business needle</li>
+                            <li>Surgical target identification—the single bottleneck causing 80% of your problem</li>
+                        </ul>
+                        <p><em>Example outcome: An e-commerce client eliminated their "inventory costs vs. stockouts" dilemma, reducing carrying costs by 32% while improving fulfillment rates.</em></p>
+                        <a href="https://www.linkedin.com/in/webcontentmanager/" class="btn" style="width: 100%;">Request Session</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Full Transformation Sprint</h3>
+                        <div class="price">$5,000+ <span>/engagement</span></div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="features">
+                            <li>3-day intensive engagement with your leadership and execution teams</li>
+                            <li>Full system redesign addressing root constraints behind trade-offs</li>
+                            <li>Custom AI implementation blueprint with surgical targeting</li>
+                            <li>Leadership communication framework for C-suite outcomes</li>
+                            <li>30-day implementation support with bi-weekly check-ins</li>
+                            <li>ROI tracking system measuring time saved, cost avoided, revenue earned</li>
+                        </ul>
+                        <p><em>Example outcome: A manufacturing client transformed their "quality control vs. production speed" trade-off, achieving 40% faster throughput with 22% fewer defects.</em></p>
+                        <a href="https://www.linkedin.com/in/webcontentmanager/" class="btn" style="width: 100%;">Request Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Why This Works When Others Fail</h2>
+            <p>I don't sell AI tools or generic strategy. I sell the elimination of impossible choices—re-engineering your systems so you get both outcomes that previously required sacrifice. The bottleneck isn't hidden; it's trapped in a trade-off. I specialize in setting it free.</p>
+            <a href="https://www.linkedin.com/in/webcontentmanager/" class="btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Hamilton Systems. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamilton Systems Analysis | Logical Problem-Solving & Strategic Planning</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+        .tagline {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .services {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .service-tier {
+            border: 1px solid #ccc;
+            border-left: 5px solid #0056b3;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .service-tier h3 {
+            margin-top: 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+        ul li::before {
+            content: "→ ";
+            color: #0056b3;
+            font-weight: bold;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Hamilton Systems Analysis</h1>
+            <p class="tagline">Logical Problem-Solving & Strategic Planning</p>
+        </header>
+
+        <main>
+            <p>Feeling stuck? Facing a complex personal or professional problem with no clear path forward? I specialize in deconstructing chaotic situations and providing structured, logical frameworks for action. Transform your uncertainty into a clear, actionable strategy.</p>
+            
+            <section class="services">
+                <div class="service-tier">
+                    <h3>Tier 1: The Problem Framing</h3>
+                    <p class="price">Starting at $75</p>
+                    <p>An ideal starting point for gaining clarity on a complex issue. You provide a written summary of your problem (max 500 words), and I deliver a one-page diagnostic document.</p>
+                    <ul>
+                        <li>Identification of core assumptions driving the problem.</li>
+                        <li>Mapping of the key variables and constraints at play.</li>
+                        <li>Distinction between stated objectives and actual desired outcomes.</li>
+                        <li>A set of 3-5 targeted clarifying questions to guide your next steps.</li>
+                    </ul>
+                </div>
+
+                <div class="service-tier">
+                    <h3>Tier 2: The Strategic Map</h3>
+                    <p class="price">Starting at $300</p>
+                    <p>Includes the full "Problem Framing" service, plus a collaborative one-hour video call. We will work together to visualize the path forward.</p>
+                    <ul>
+                        <li>Everything included in Tier 1.</li>
+                        <li>A 60-minute strategic consultation via video call.</li>
+                        <li>A custom decision tree or flowchart mapping potential paths and their likely outcomes.</li>
+                        <li>A summary document with a clear set of recommended actions.</li>
+                    </ul>
+                </div>
+
+                <div class="service-tier">
+                    <h3>Tier 3: The System Audit</h3>
+                    <p class="price">Starting at $500</p>
+                    <p>A deep-dive analysis for business owners or professionals looking to optimize an existing process. Perfect for workflows that are inefficient, confusing, or failing to produce desired results.</p>
+                    <ul>
+                        <li>A thorough analysis of a specific business process (e.g., customer onboarding, project management, content creation).</li>
+                        <li>Identification of bottlenecks, redundant steps, and feedback loops.</li>
+                        <li>A comprehensive audit report detailing the system's inefficiencies.</li>
+                        <li>A prioritized list of recommended process changes for improved efficiency and output.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="cta">
+                <a href="#content" class="cta-button"><a href="https://www.linkedin.com/in/webcontentmanager/">Request a Consultation</a></a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Hamilton Systems Analysis. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

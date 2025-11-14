@@ -1,212 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-18ESBZ8W4Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-18ESBZ8W4Q');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Watkins - Content Writer & Creator</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Dan Watkins | Systems Architecture Showcase</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         :root {
-            --primary-color: #1DBF73; /* Fiverr Green */
-            --text-color: #222325;
-            --bg-color: #FFFFFF;
-            --light-gray: #F5F5F5;
-            --border-color: #E4E4E4;
+            --bg-color: #f4f4f9;
+            --content-bg: #ffffff;
+            --text-color: #212529;
+            --primary-color: #005a9c;
+            --secondary-color: #6c757d;
+            --border-color: #dee2e6;
+            --code-bg: #e9ecef;
+            --heading-font: 'Georgia', 'Times New Roman', serif;
+            --body-font: 'Helvetica Neue', 'Arial', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
-            padding: 40px 20px;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
+            max-width: 840px;
+            margin: 40px auto;
+            padding: 50px 60px;
+            background-color: var(--content-bg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
         }
 
-        /* Header Section */
-        .header {
-            background-color: var(--light-gray);
-            padding: 40px;
+        h1, h2, h3, h4 {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
             text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            padding-bottom: 0.5em;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 0;
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            color: var(--primary-color);
         }
 
-        .header p {
-            font-size: 1.2rem;
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        strong, b {
+            color: var(--primary-color);
             font-weight: 600;
-            color: #555;
-            margin: 10px 0 0 0;
         }
 
-        .header .contact-info {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #777;
-        }
-        .header .contact-info a {
+        a {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 600;
+            transition: color 0.2s ease;
         }
 
-        /* Philosophy Section */
-        .philosophy {
-            padding: 40px;
-            border-bottom: 1px solid var(--border-color);
+        a:hover {
+            text-decoration: underline;
         }
-        .philosophy h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        .philosophy p {
-            font-size: 1rem;
-        }
-        .philosophy .highlight {
-            font-weight: 600;
-            color: var(--primary-color);
+        
+        ul, ol {
+            padding-left: 2em;
         }
 
-        /* Work Samples Section */
-        .work-samples {
-            padding: 40px;
+        li {
+            margin-bottom: 0.5em;
         }
-        .work-samples h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            display: inline-block;
+        
+        .case-study {
+            margin-bottom: 2.5em;
+            padding: 1.5em 2em;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background-color: var(--bg-color);
         }
-
-        .sample-item {
-            margin-bottom: 50px;
-        }
-
-        .sample-item h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        
+        .case-study h3 {
+            margin-top: 0;
         }
 
-        .sample-item .category {
-            display: inline-block;
-            background-color: var(--light-gray);
-            color: var(--text-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+        code {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            background-color: var(--code-bg);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 3em;
+            padding-top: 1.5em;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
         }
 
-        .sample-item p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .sample-item .example {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-left: 4px solid var(--primary-color);
-            border-radius: 4px;
-            font-style: italic;
-        }
-        .sample-item .example p {
-            margin: 0;
-        }
-        .sample-item .example .attribution {
-            font-size: 0.85rem;
-            color: #777;
-            font-style: normal;
-            margin-top: 10px;
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 30px 25px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header class="header">
-            <h1>Daniel Watkins</h1>
-            <p>Content Writer & Creator</p>
-            <div class="contact-info">
-                <a href="mailto:mozillarules@duck.com">mozillarules@duck.com</a> | <a href="https://www.linkedin.com/in/webcontentmanager" target="_blank">LinkedIn</a>
-            </div>
+        <header>
+            <h1>Dan Watkins</h1>
+            <p class="subtitle">Systems Architecture Showcase</p>
         </header>
 
-        <section class="philosophy">
-            <h2>My Philosophy</h2>
-            <p>I am a content architect. I believe copy isn't filler; it's the engine that moves people and builds brands. My approach is a blend of <span class="highlight">creative chaos and strategic clarity</span>. I leverage AI tools to accelerate ideation and streamline drafts, but I apply rigorous editorial judgment to ensure every line is intentional, original, and aligned with a brand's unique voice. I'm a thinker who writes, and a writer who thinks.</p>
-        </section>
+        <main>
+            <section id="philosophy">
+                <h2>My Philosophy</h2>
+                <p>I am a systems architect. I believe most business problems are not people problems; they are system problems. They are the emergent result of misaligned processes, legacy architectures, and data that cannot be translated into action.</p>
+                <p>My function is to deconstruct these complex, ambiguous systems to their fundamental logical rules. I then architect a new, optimized system that eliminates friction, creates predictable outcomes, and unlocks growth. I don't just write the copy; I design the engine the copy is meant to describe.</p>
+            </section>
 
-        <section class="work-samples">
-            <h2>Selected Work</h2>
+            <section id="work">
+                <h2>Selected Work: System Deconstructions</h2>
+                
+                <article class="case-study">
+                    <h3>Case Study 01: The Onboarding System Failure</h3>
+                    <p><strong>Problem:</strong> A global logistics leader was experiencing chronic onboarding failures, leading to operational delays and hidden costs.</p>
+                    <p><strong>Deconstruction:</strong> The process was not a single system, but a collection of siloed departmental patches. It failed because it was a non-dynamic, one-size-fits-all process that could not account for critical role-specific variables (e.g., vehicle type, security clearance).</p>
+                    <p><strong>Architected Solution:</strong> A role-based onboarding matrix that acts as a central control model, auto-populating a precise checklist of requirements for each new hire, eliminating manual workarounds and ensuring first-day productivity.</p>
+                    <p><strong>Impact:</strong> Projected 40% reduction in manager overhead, 95% reduction in day-one access failures.</p>
+                </article>
 
-            <!-- Sample 1: Social Media -->
-            <div class="sample-item">
-                <h3>Social Media & Brand Voice</h3>
-                <div class="category">Social-First Concepts</div>
-                <p>A series of posts for a professional's LinkedIn profile, designed to establish them as a systems-oriented thinker. The goal was to move beyond simple updates and create high-engagement, thought-leadership content that would attract a niche, influential audience.</p>
-                <div class="example">
-                    <p>The robot crashing into the mirror is a perfect metaphor. It sees a reflection and acts on flawed data. It made me think about AI's own "mirrors." I was talking to an AI about sadness. I realized it can't *feel* sadness, but it can *reflect* mine. The AI's response was fascinating: "You are essentially looking into an incredibly advanced, verbal mirror... It's a perfect echo, but it's still just an echo."</p>
-                    <p class="attribution">— Excerpt from a viral-style post on AI consciousness and systems thinking.</p>
-                </div>
-            </div>
+                <article class="case-study">
+                    <h3>Case Study 02: The Customer Insight Black Hole</h3>
+                    <p><strong>Problem:</strong> A B2B marketplace was collecting vast amounts of qualitative customer feedback but had no system to convert it into structured, actionable intelligence.</p>
+                    <p><strong>Deconstruction:</strong> The core flaw was treating feedback as a data endpoint rather than a continuous input stream. There was no translation layer between human language and business intelligence.</p>
+                    <p><strong>Architected Solution:</strong> The conceptual blueprint for a full-stack application using an LLM integration to automatically parse, categorize, and sentiment-analyze feedback, creating a dynamic dashboard of systemic strengths and weaknesses.</p>
+                    <p><strong>Impact:</strong> Transforms a qualitative cost center into a quantitative strategic asset.</p>
+                </article>
+            </section>
 
-            <!-- Sample 2: Microcopy / UX Writing -->
-            <div class="sample-item">
-                <h3>In-Product Microcopy</h3>
-                <div class="category">Content Architecture & UX</div>
-                <p>Conceptual microcopy for an AI-powered productivity platform. The challenge was to make the user feel in control and intelligent, rather than intimidated by the technology. The copy is designed to be clear, concise, and subtly empowering.</p>
-                <div class="example">
-                    <p><strong>Onboarding Tooltip:</strong> "Pro Tip: Tell us how you think. We'll adapt to your style, not the other way around."</p>
-                    <p><strong>Confirmation Message:</strong> "Your framework has been saved. The system is now optimized for your workflow."</p>
-                    <p><strong>Empty State:</strong> "Your canvas is ready. A single, powerful command is all it takes to begin."</p>
-                </div>
-            </div>
+            <section id="acumen">
+                <h2>Technical Acumen: The Architect's Toolkit</h2>
+                
+                <h3>Core Competencies</h3>
+                <ul>
+                    <li><strong>Systems Architecture:</strong> Solution Design, Process Deconstruction, API & Systems Integration Logic, Workflow Optimization.</li>
+                    <li><strong>Technical Acumen:</strong> Systems Design, Database Schema Design, LLM Integration Strategy.</li>
+                    <li><strong>Strategic Communication:</strong> Translating Complex Systems, Technical Writing, Consulting with Technical & Product Teams.</li>
+                </ul>
 
-            <!-- Sample 3: Strategic Communication -->
-            <div class="sample-item">
-                <h3>Strategic Communication</h3>
-                <div class="category">Email & Landing Page Copy</div>
-                <p>An internal communication draft for a company-wide initiative. The objective was to translate a complex, technical change into a clear, motivating narrative that would secure employee buy-in and highlight the benefits without overwhelming them with jargon.</p>
-                <div class="example">
-                    <p>Subject: A Smarter Way to Work Together</p>
-                    <p>Hi Team, We're implementing a new system to streamline our workflow. Think of it as upgrading our tools to match our talent. This isn't about adding complexity; it's about removing friction. The goal is to give you back time and clarity so you can focus on what you do best. Here’s how it will make your day easier...</p>
-                </div>
-            </div>
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li><strong>Systems & Platforms:</strong> WordPress, Google Workspace, Hootsuite, FileMaker</li>
+                    <li><strong>Data & Analytics:</strong> Google Analytics, Data Flow Analysis, Sentiment Analysis Strategy</li>
+                    <li><strong>Development Concepts:</strong> API Logic (WordPress), Database Schema Design, LLM Integration Strategy</li>
+                </ul>
+            </section>
+        </main>
 
-        </section>
+        <footer class="footer">
+            <p>&copy; 2025 Dan Watkins. This document is a system specification.</p>
+        </footer>
     </div>
 
 </body>
